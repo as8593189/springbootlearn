@@ -23,5 +23,11 @@ public class UserServiceImpl implements UserService{
 	public List<User> showAllUsers() {
 		return usermapper.showAllUser();
 	}
+	@Override
+	public void addUser(String uname, int uage) {
+		// 添加新用户
+		usermapper.addUser(uname, uage);
+		
+	}
 
 }
