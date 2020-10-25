@@ -15,19 +15,25 @@ import com.Service.UserService;
 import com.pojo.User;
 
 @Controller
+@RequestMapping("/users")
 public class UserController {
 	//注入
 	@Autowired
 	private UserService userService;
+	//显示页面跳转
+	@RequestMapping("/{page}")
+	public String showPage(@PathVariable String page){
+		return page;
+	}
 	//显示所有的用户
-	@RequestMapping("/users")
+	@RequestMapping("/all")
 	public String showAllUsers(Model model) {
 		List<User> users=userService.showAllUsers();
 		model.addAttribute("users", users);
 		return "users.html";
 	}
 	//添加新用户的请求
-	@RequestMapping("/addUsers")
+	@RequestMapping("/adduser")
 	public String addUser(@RequestParam(value="uname") String uname,@RequestParam(value="uage") int uage) {
 		System.out.println("测试");
 		userService.addUser(uname, uage);

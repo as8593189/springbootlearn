@@ -5,8 +5,7 @@
 <title>添加用户</title>
 </head>
 <body>
-
-	<form action="/addUsers" method="post">
+	<form th:action="@{/users/adduser}" method="post">
 	  		用户名:<input  type="text" id="uname" name="uname"/><br/>
 	  		年龄:<input type="text" id="uage" name="uage"/><br/>
 	  		<input type="submit"  value="提交"/>

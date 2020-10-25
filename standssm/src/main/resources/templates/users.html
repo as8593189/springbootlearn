@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>全部用户</title>
 </head>
 <body>
 	<table>
@@ -17,7 +17,7 @@
 			<td th:text="${user.uage}"></td>
 		</tr>
 	</table>
-	<a href="html/adduser.html">添加新用户</a>
+	<a th:href="@{/users/adduser.html}">添加新用户</a>
 	
 </body>
 </html>
